@@ -1,0 +1,2 @@
+# scrimba projects
+ practicing javascript
