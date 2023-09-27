@@ -221,15 +221,15 @@ search.addEventListener(`click`, () => {
           break;
 
         case 'Rain':
-          image.sre = 'image/Rain.png';
+          image.sre = 'image/rain.jpg';
           break;
 
         case 'Snow':
-          image.sre = 'image/Snow.png';
+          image.sre = 'image/snow.jpg';
           break;
 
         case 'Clouds':
-          image.sre = 'image/cloud.png';
+          image.sre = 'image/cloud.jpg';
           break;
 
         case 'Haze':
@@ -240,7 +240,7 @@ search.addEventListener(`click`, () => {
           image.src = '';
       }
 
-      temperature.innerHTML = `${parseInt(json.main.temp)}<spana> °c </span>`;
+      temperature.innerHTML = `${parseInt(json.main.temp)}<spana>°c </span>`;
       description.innerHTML = `${json.weather[0].description}`;
       humidity.innerHTML = `${json.main.humidity}%`
       wind.innerHTML = `${parseInt(json.wind.speed)}km/h`
