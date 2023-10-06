@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot Web App</title>
+</head>
+<body>
+  <h1>Chatbot Web App</h1>
+
+  <input type="text" id="user-input" />
+  <button type="button" id="send-button">Send</button>
+
+  <div id="chatbox"></div>
+
+  <script>
+    // Create a Dialogflow client
+    const dialogflowClient = new DialogflowClient();
+
+    // Define the Dialogflow agent project ID
+    const projectId = "YOUR_DIALOGFLOW_AGENT_PROJECT_ID";
+
+    // Define the Dialogflow session ID
+    const sessionId = "YOUR_DIALOGFLOW_SESSION_ID";
+
+    // Get the user input element
+    const userInputElement = document.getElementById("user-input");
+
+    // Get the send button element
+    const sendButtonElement = document.getElementById("send-button");
+
+    // Get the chatbox element
+    const chatboxElement = document.getElementById("chatbox");
+
+    // Add an event listener to the send button
+    sendButtonElement.addEventListener("click", async () => {
+      // Get the user input
+      const userInput = userInputElement.value;
+
+      // Send the user input to Dialogflow
+      const response = await dialogflowClient.detectIntent({
+        session: `projects/${projectId}/agent/sessions/${sessionId}`,
+        query: userInput,
+      });
+
+      // Get the Dialogflow response
+      const dialogflowResponse = response.queryResult.fulfillmentText;
+
+      // Append the Dialogflow response to the chatbox
+      chatboxElement.innerHTML += `<p>${dialogflowResponse}</p>`;
+    });
+  </script>
+</body>
+</html>
