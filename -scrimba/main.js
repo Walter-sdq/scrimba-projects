@@ -24,9 +24,10 @@ function increase() {
 }
 
 
-function save(){
+function save() {
+  console.log(`${count} saved`);
   console.log(count)
 }
 
 
-// count();
+// save();
