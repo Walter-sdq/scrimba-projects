@@ -1,4 +1,5 @@
-let myAge = 10;
+// let myAge = 10;
+let myAge = prompt 
 let humanDogRatio = 7;
 
 let newDogAge = document.getElementById("count-el")

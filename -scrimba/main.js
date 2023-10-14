@@ -10,14 +10,16 @@ function sumAge() {
 
 ////////////////////////////
 
-let saveEl = document.getElementById("save-el")
-let newCount = document.getElementById(`count-el`);
+// let saveEl = document.getElementById("save-el")
+let newCount = document.getElementById(`count-el`)
+let log = document.getElementById('previous')
+
 console.log(newCount);
 
 let count = 0;
 
 function increase() {
-  count = count + 1;
+  count += 1;
   console.log(`button clicked`);
   newCount.innerText = count;
   console.log(count);
@@ -27,7 +29,10 @@ function increase() {
 function save() {
   console.log(`${count} saved`);
   console.log(count)
+  // let previousLog = console.log(`${count}` - `${count}`);
+  // console.log(previousLog);
 }
 
 
 // save();
+

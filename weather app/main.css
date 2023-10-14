@@ -12,6 +12,11 @@
     /* font-family: 'Space Mono', monospace; */
 }
 
+:not(body) #rootReactVNB {
+   
+    position: absolute;
+}
+
 body {
     height: 100vh;
     display: flex;
